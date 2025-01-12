@@ -3,7 +3,7 @@
 # Project Structure:
 ## Phase 1: Infrastructure setup with Terraform
 * [Servers](#servers)
-* [EKS cluster](#EKS-cluster)
+* [EKS cluster](#eks-cluster)
 ## Phase 2: Configure Jenkins and Build the CI pipeline
 * Install the required plugins and configure tools
 * Configure credentials (GitHub, DockerHub, gmail, sonarqube)
@@ -18,5 +18,5 @@
 ## Phase 4: Setup and Configure Prometheus and Grafana
 * Install Prometheus-stack 
 ## Phase 1: Infrastructure setup with Terraform
-## step 1: servers
-## step2: EKS cluster
+## servers
+## EKS cluster
