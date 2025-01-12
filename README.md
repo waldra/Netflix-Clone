@@ -1,1 +1,1 @@
-# Netflix clone deployment on EKS cluster using Argo CD
+# Netflix Clone Deployment on EKS Cluster
