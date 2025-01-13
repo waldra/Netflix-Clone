@@ -140,7 +140,7 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n ku
 ```
 ## ExternalDNS Installation
 step 1: Create IAM policy for ExternalDNS<br>
-The following IAM Policy document allows ExternalDNS to update Route53 Resource Record Sets and Hosted Zones. Create IAM policy name `AllowExternalDNSUpdates` (but you can name it whatever you prefer)
+The following IAM Policy document allows ExternalDNS to update Route53 Resource Record Sets and Hosted Zones. Create IAM policy name `AllowExternalDNSUpdates` (but you can name it whatever you prefer).
 ```json
 {
   "Version": "2012-10-17",
