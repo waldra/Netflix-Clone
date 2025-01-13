@@ -86,6 +86,8 @@ Then Scroll down to `Default Triggers` and check the following:
 Finally, scroll down to `E-mail Notification` and set the following settings:
 ![notfication1](https://github.com/waldra/Netflix-Clone/blob/main/images/email-notification.png)
 ![notfication2](https://github.com/waldra/Netflix-Clone/blob/main/images/email-notification1.png)
+## TMDB API Key
+Go to [https://www.themoviedb.org/](https://www.themoviedb.org/) > Login > Click here. Fill up your details, go to API, generate API Key, copy the API Key, and then use the key for building docker image.
 ## Phase 3: Configure EKS Cluster and Build the CD pipeline
 ## helm installation
 ```bash
@@ -170,13 +172,13 @@ If you are using the AWS CLI, you can run the following to install the above pol
 ```bash
 aws iam create-policy --policy-name "AllowExternalDNSUpdates" --policy-document file://policy.json
 ```
-step 2: Create iamserviceaccount for ExternalDNS
+step 2: Create iamserviceaccount for ExternalDNS. Replace `Your-account-id` with you real AWS account ID.
 ```bash
 eksctl create iamserviceaccount \
   --cluster eks-dev \
   --name "external-dns" \
   --namespace default \
-  --attach-policy-arn arn:aws:iam::654654241121:policy/AmazonExternalDnsPolicy \
+  --attach-policy-arn arn:aws:iam::[Your-account-id]:policy/AmazonExternalDnsPolicy \
   --approve
 ```
 step 3:  Create ExternalDns yaml file, name it `externaldns.yml` (but you can name it whatever you want), and copy the following manifest
