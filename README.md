@@ -1,5 +1,7 @@
 # End-to-End Deployment of a Netflix Clone on EKS with Jenkins and Argo CD
-
+![DevSecOps](https://github.com/waldra/Netflix-Clone/blob/main/images/netflix-CICD.png)
+![netflix-5](https://github.com/waldra/Netflix-Clone/blob/main/images/5.png)
+![netflix-6](https://github.com/waldra/Netflix-Clone/blob/main/images/6.png)
 # Project Structure:
 ## Phase 1: Infrastructure setup with Terraform
 * [Setup Jump, SonarQube, and Jenkins server](#servers)
