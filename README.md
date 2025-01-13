@@ -8,8 +8,8 @@
 * [Install the required plugins and configure tools](#plugins)
 * [Configure credentials (GitHub, DockerHub, gmail, sonarqube)](configure-credentials)
 * [Configure Jenkins with SonarQube server](#sonarqube-configuration)
-* Configure SMTP server on Jenkins for sending email notfications
-* Build the CI pipeline
+* [Configure SMTP server on Jenkins for sending email notfications](#smtp-configuration)
+* [Generate API Key from TMDB](#tmdb-api-key)
 ## Phase 3: Configure EKS Cluster and Build the CD pipeline
 * [Install Helm](#helm-installation)
 * [Install Argo CD](#argocd-installation)
@@ -76,6 +76,9 @@ To integrate SonarQube server with Jenkins server. Go to your Jenkins server > M
 ![sonarqube-server](E:\Project\CICD\Netflix\images\sonarqube-server.png)
 Configure webhook on SonarQube. Go to your SonarQube server > Administration > configuration > Webhooks > Create.
 ![webhook](E:\Project\CICD\Netflix\images\webhook.png)
+## SMTP configuration
+We need to configure SMTP server on Jenkins for sending email notfications. We'll send email about trivy filesystem and image scan. To configure SMTP server, go to your Jenkins server > Manage Jenkins > System. Scroll down to Extended E-mail Notification.
+![email](E:\Project\CICD\Netflix\images\sonarqube-server.png)
 ## Phase 3: Configure EKS Cluster and Build the CD pipeline
 ## helm installation
 ```
