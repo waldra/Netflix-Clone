@@ -48,13 +48,13 @@ After plugins installation, configure the tools as follow:<br>
 1. JDK
 ![jdk](https://github.com/waldra/Netflix-Clone/blob/main/images/jdk.png)
 2. nodejs
-![nodejs](E:\Project\CICD\Netflix-Clone\images\nodejs.png)
+![nodejs](https://github.com/waldra/Netflix-Clone/blob/main/images/nodejs.png)
 3. SonarQube Scanner
-![sonarqube](E:\Project\CICD\Netflix-Clone\images\nodejs.png)
+![sonarqube](https://github.com/waldra/Netflix-Clone/blob/main/images/sonar-scanner.png)
 4. OWASP dependency-check
-![OWASP](E:\Project\CICD\Netflix-Clone\images\nodejs.png)
+![OWASP](https://github.com/waldra/Netflix-Clone/blob/main/images/dependency-check.png)
 5. Docker
-![docker](E:\Project\CICD\Netflix-Clone\images\nodejs.png)
+![docker](https://github.com/waldra/Netflix-Clone/blob/main/images/docker.png)
 ## Configure credentials
 1. GitHub <br>
 step 1: Generate GitHub token <br>
@@ -75,12 +75,17 @@ step 2: Configure SonarQube token on Jenkins<br>
 Go to Jenkins > Manage Jenkins > Credentials > Add Credentials. Select secret text and place the sonarqube token.
 ## SonarQube configuration
 To integrate SonarQube server with Jenkins server. Go to your Jenkins server > Manage Jenkins > System. Scroll down to SonarQube Servers. Add the following enteries:
-![sonarqube-server](E:\Project\CICD\Netflix\images\sonarqube-server.png)
+![sonarqube-server](https://github.com/waldra/Netflix-Clone/blob/main/images/sonarqube-server.png)
 Configure webhook on SonarQube. Go to your SonarQube server > Administration > configuration > Webhooks > Create.
-![webhook](E:\Project\CICD\Netflix\images\webhook.png)
+![webhook](https://github.com/waldra/Netflix-Clone/blob/main/images/webhook.png)
 ## SMTP configuration
 We need to configure SMTP server on Jenkins for sending email notfications. We'll send email about trivy filesystem and image scan. To configure SMTP server, go to your Jenkins server > Manage Jenkins > System. Scroll down to Extended E-mail Notification.
-![email](E:\Project\CICD\Netflix\images\sonarqube-server.png)
+![email](https://github.com/waldra/Netflix-Clone/blob/main/images/extended-email.png)
+Then Scroll down to `Default Triggers` and check the following:
+![trigger](https://github.com/waldra/Netflix-Clone/blob/main/images/trigger.png)
+Finally, scroll down to `E-mail Notification` and set the following settings:
+![notfication1](https://github.com/waldra/Netflix-Clone/blob/main/images/email-notification.png)
+![notfication2](https://github.com/waldra/Netflix-Clone/blob/main/images/email-notification1.png)
 ## Phase 3: Configure EKS Cluster and Build the CD pipeline
 ## helm installation
 ```
@@ -190,3 +195,4 @@ Step 3: Access Grafana Dashboard
 ```
 kubectl patch svc prometheus-stack-grafana -n monitoring -p '{"spec": {"type": "LoadBalancer"}}'
 ```
+![Grafana](https://github.com/waldra/Netflix-Clone/blob/main/images/7.png)
