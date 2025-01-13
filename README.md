@@ -7,7 +7,7 @@
 ## Phase 2: Configure Jenkins and Build the CI pipeline
 * [Install the required plugins and configure tools](#plugins)
 * [Configure credentials (GitHub, DockerHub, gmail, sonarqube)](configure-credentials)
-* Configure Jenkins with SonarQube server
+* [Configure Jenkins with SonarQube server](#sonarqube-configuration)
 * Configure SMTP server on Jenkins for sending email notfications
 * Build the CI pipeline
 ## Phase 3: Configure EKS Cluster and Build the CD pipeline
@@ -53,17 +53,29 @@ After plugins installation, configure the tools as follow:<br>
 ![OWASP](E:\Project\CICD\Netflix-Clone\images\nodejs.png)
 5. Docker
 ![docker](E:\Project\CICD\Netflix-Clone\images\nodejs.png)
-## Configure Credentials
+## Configure credentials
 1. GitHub <br>
 step 1: Generate GitHub token <br>
 Go to your GitHub account > settings > Developer settings > personal access tokens > Token classic > Generate new token.<br>
 step 2: Configure the generated token on Jinkins <br>
-Go to Jenkins > Manage Jenkins > Credentials > Add Credentials. Add your GitHub account username and the generated token.<br>
+Go to Jenkins > Manage Jenkins > Credentials > Add Credentials. In the username and password filed, enter your Github account username and the generated token.<br>
 2. DockerHub<br>
 Go to Jenkins > Manage Jenkins > Credentials > Add Credentials. Add your Dockerhub username and password.
 3. mail<br>
-
-
+step 1: Generate token on gmail<br>
+Go to your gmail account -> Manage your Google Account -> Security -> 2-Step Verification -> App passwords. Enter your `App name` then enter create. Copy the generated token.<br>
+step 2: Configure the generated token on Jenkins<br>
+Go to Jenkins > Manage Jenkins > Credentials > Add Credentials. In the username and password filed, enter your gmail address and the generated gmail token.<br>
+4. SonarQube<br>
+step 1: Generate SonarQube token <br>
+Go to SonarQube server > Administration > Security > Users > Tokens. Enter your `token-name`, Generate, and then Done.
+step 2: Configure SonarQube token on Jenkins<br>
+Go to Jenkins > Manage Jenkins > Credentials > Add Credentials. Select secret text and place the sonarqube token.
+## SonarQube configuration
+To integrate SonarQube server with Jenkins server. Go to your Jenkins server > Manage Jenkins > System. Scroll down to SonarQube Servers. Add the following enteries:
+![sonarqube-server](E:\Project\CICD\Netflix\images\sonarqube-server.png)
+Configure webhook on SonarQube. Go to your SonarQube server > Administration > configuration > Webhooks > Create.
+![webhook](E:\Project\CICD\Netflix\images\webhook.png)
 ## Phase 3: Configure EKS Cluster and Build the CD pipeline
 ## helm installation
 ```
