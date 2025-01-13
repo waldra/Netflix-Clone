@@ -8,7 +8,7 @@
 * [EKS cluster](#eks-cluster)
 ## Phase 2: Configure Jenkins and Build the CI pipeline
 * [Install the required plugins and configure tools](#plugins)
-* [Configure credentials (GitHub, DockerHub, gmail, sonarqube)](configure-credentials)
+* [Configure credentials (GitHub, DockerHub, gmail, sonarqube)](#credentials-configuration)
 * [Configure Jenkins with SonarQube server](#sonarqube-configuration)
 * [Configure SMTP server on Jenkins for sending email notfications](#smtp-configuration)
 * [Generate API Key from TMDB](#tmdb-api-key)
@@ -35,7 +35,7 @@ terraform plan
 terraform apply --auto-approve
 ```
 ## Phase 2: Configure Jenkins and Build the CI pipeline
-## :mag_right: Plugins 
+## Plugins 
 Go to Jenkins -> Manage Jenkins -> Plugins -> Available plugins, and install the follwoing plugins:
 1. Eclipse Temurin installer Plugin
 2. NodeJS Plugin
@@ -55,7 +55,7 @@ After plugins installation, configure the tools as follow:<br>
 ![OWASP](https://github.com/waldra/Netflix-Clone/blob/main/images/dependency-check.png)
 5. Docker
 ![docker](https://github.com/waldra/Netflix-Clone/blob/main/images/docker.png)
-## :key: Configure credentials
+## Credentials configuration
 1. GitHub <br>
 step 1: Generate GitHub token <br>
 Go to your GitHub account > settings > Developer settings > personal access tokens > Token classic > Generate new token.<br>
@@ -73,12 +73,12 @@ step 1: Generate SonarQube token <br>
 Go to SonarQube server > Administration > Security > Users > Tokens. Enter your `token-name`, Generate, and then Done.
 step 2: Configure SonarQube token on Jenkins<br>
 Go to Jenkins > Manage Jenkins > Credentials > Add Credentials. Select secret text and place the sonarqube token.
-## :chart_with_downwards_trend: SonarQube configuration
+## SonarQube configuration
 To integrate SonarQube server with Jenkins server. Go to your Jenkins server > Manage Jenkins > System. Scroll down to SonarQube Servers. Add the following enteries:
 ![sonarqube-server](https://github.com/waldra/Netflix-Clone/blob/main/images/sonarqube-server.png)
 Configure webhook on SonarQube. Go to your SonarQube server > Administration > configuration > Webhooks > Create.
 ![webhook](https://github.com/waldra/Netflix-Clone/blob/main/images/webhook.png)
-## :email: SMTP configuration
+## SMTP configuration
 We need to configure SMTP server on Jenkins for sending email notfications. We'll send email about trivy filesystem and image scan. To configure SMTP server, go to your Jenkins server > Manage Jenkins > System. Scroll down to Extended E-mail Notification.
 ![email](https://github.com/waldra/Netflix-Clone/blob/main/images/extended-email.png)
 Then Scroll down to `Default Triggers` and check the following:
