@@ -44,7 +44,7 @@ Version
 
 After plugins installation, configure the tools as follow:<br>
 1. JDK
-![jdk](E:\Project\CICD\Netflix-Clone\images\nodejs.png)
+![jdk](https://github.com/waldra/Netflix-Clone/blob/main/images/jdk.png)
 2. nodejs
 ![nodejs](E:\Project\CICD\Netflix-Clone\images\nodejs.png)
 3. SonarQube Scanner
