@@ -37,7 +37,7 @@ resource "aws_instance" "Jump-server" {
     Name = "Nexus"
   }
 }
-/*
+
 # Jenkins
 resource "aws_instance" "Jenkins" {
   ami                         = data.aws_ami.ubuntu-ami.id
@@ -72,7 +72,7 @@ resource "aws_instance" "sonarqube" {
     Name = "SonarQube"
   }
 }
-*/
+
 #=============== security groups ==============#
 
 resource "aws_security_group" "sg" {
